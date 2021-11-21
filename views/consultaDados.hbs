@@ -1,0 +1,38 @@
+<div id="consulta" class="tabcontent">
+        <h3 id="title">Consultar dados</h3>
+
+        <form>
+            <fieldset class="group" style="display: flex; flex-direction: column; flex-wrap: nowrap;">
+    
+                <div class="field">
+                    <label for="consultaPessoa" class="form-label" ><strong>Consultar pessoa</strong></label>
+                    <input type="text"  class="form-control" name="consultaPessoa" id="consultaPessoa">
+
+                    <button class="btn btn-secondary" onclick="consultPerson()">Consultar Pessoa</button>
+                </div>
+                
+                <div class="field">
+                    <label for="deletePerson" class="form-label" ><strong>Excluir pessoa pelo ID</strong></label>
+                    <input type="text"  class="form-control"  name="deletePerson" id="deletePerson">
+
+                    <button class="btn btn-secondary" onclick="deletePersonId()">Deletar Pessoa</button>
+                </div>
+
+                <div class="field">
+                    <label for="listPerson" class="form-label"><strong>Pessoas cadastradas</strong></label>
+
+                    <button class="btn btn-secondary" onclick="listPerson()">Consultar Pessoas</button>
+                </div>
+
+                <div class="field">
+                    <label for="consultRoom" class="form-label"><strong>Consultar sala pelo ID</strong></label>
+                    <input type="text"  class="form-control" name="consultRoom" id="consultRoom">
+
+                    <button class="btn btn-secondary" onclick="deletePersonId()">Consultar sala</button>
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
+    
