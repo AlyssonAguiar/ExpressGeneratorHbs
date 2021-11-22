@@ -1,0 +1,15 @@
+Descrição problema: 
+A Faculdade Cesusc irá realizar uma capacitação para uma grande empresa de Florianópolis,  especializada em gestão de recursos humanos. O treinamento será realizado em duas etapas e  as pessoas serão divididas em salas com lotação variável. Serão realizados, também, dois  intervalos de café em dois espaços distintos. A partir deste cenário, você foi contratado para  desenvolver o back-end do sistema que gerenciará este evento. 
+
+Requisitos da entrega: 
+Etapa 1: nesta etapa, você deve construir o código-fonte que contemple as seguintes operações  expostas como endpoints, utilizando o estilo arquitetural REST, de modo que a aplicação possa: • Realizar o cadastro de pessoas, com nome e sobrenome. 
+• Realizar a consulta de uma pessoa pelo nome. 
+• Realizar a remoção de uma pessoa pelo id. 
+• Realizar a listagem de todas as pessoas. 
+• Realizar o cadastro das salas do evento, com nome e lotação. 
+• Realizar a consulta de uma sala específica pelo id. 
+• Realizar a alteração do nome e da lotação de uma sala específica. 
+Etapa 2: nesta etapa, você disporá de 10 minutos para realizar a apresentação/execução da  aplicação desenvolvida para toda a turma, de modo que as decisões de implementação, os  pontos positivos e negativos sejam apresentados/defendidos. 
+Entrega da solução: 
+Para este desafio, você deverá contemplar os seguintes requisitos obrigatórios: • Utilização das tecnologias/ferramentas: linguagem JavaScript, plataforma NodeJS, estilo  arquitetural REST, persistência de dados na nuvem utilizando o MongoDB Atlas,  módulos adicionais: express, mongoose, cors e body-parser, teste da aplicação  utilizando a ferramenta Postman. 
+• O código-fonte da aplicação precisa ser versionado com a ferramenta Git e enviado para  um repositório público de sua preferência. O código deve incluir um arquivo  README.md na raiz do projeto. Este documento deve apresentar a descrição de como  compilar e executar a aplicação, além das instruções de como utilizá-la.
