@@ -4,7 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var mongoose = require('mongoose');
+var session = require('express-session');
+var flash = require('req-flash');
+var cors = require('cors')
+
 //variavel de rotas
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 var cadastroPessoasRouter = require('./routes/cadastroPessoa');
 var cadastroSalasRouter = require('./routes/cadastroSalas');
 var dadosPessoaRouter = require('./routes/dadosPessoa');
@@ -12,6 +19,8 @@ var dadosSalaRouter = require('./routes/dadosSala');
 var tabelaPessoaRouter = require('./routes/tabelaPessoa');
 
 var app = express();
+
+app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,12 +32,40 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//como vai estar o "link" para chamar cada pagina
-app.use('/', cadastroPessoasRouter);
+app.use(session({
+  secret: 'djhxcvxfgshajfgjhgsjhfgsakjeauytsdfy',
+  resave: false,
+  saveUninitialized: true
+  }));
+
+  app.use(flash());
+ 
+ // Global variables
+app.use(function(req, res, next){
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
+
+//Db Connection Start 
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
+.then(() => console.log('connection successful'))
+.catch((err) => console.error(err))
+
+//mongoose.connect("mongodb://localhost:27017/test", { useNewUrlParser: true });
+//State  0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
+//console.log(mongoose.connection.readyState);
+//DB Connection End
+
+app.use('/index', indexRouter);
+app.use('/', usersRouter);
+app.use('/cadastroPessoas', cadastroPessoasRouter);
 app.use('/cadastroSalas', cadastroSalasRouter);
 app.use('/dadosPessoa', dadosPessoaRouter);
 app.use('/dadosSala', dadosSalaRouter);
-app.use('/tabelaPessoa', tabelaPessoaRouter);
+app.use('/tabelaPessoa', tabelaPessoaRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
