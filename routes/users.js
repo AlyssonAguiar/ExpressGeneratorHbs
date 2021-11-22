@@ -35,7 +35,7 @@ router.post('/cadastroPessoa', function(req, res, next) {
     console.log(req.body);
 
     const mybodydata = {
-        name: req.body.nome,
+        name: req.body.name,
         sobrenome: req.body.sobrenome
     }
     var data = UsersModel(mybodydata);
