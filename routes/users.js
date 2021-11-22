@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 router.get('/tabelaPessoa', function (req, res, next) {
     UsersModel.find({}, function (err, users) {
         if (err) {
-            res.send('algo deu errado');
+            res.send('algo deu errado!');
             next();
         }
         res.json(users);
