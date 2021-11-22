@@ -20,6 +20,4 @@ router.get('/tabelaPessoa', function (req, res, next) {
 })
 
 
-
-
 module.exports = router;

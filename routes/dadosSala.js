@@ -22,8 +22,8 @@ router.get('/consultar/:_id', function (req, res) {
 
 /* UPDATE utilizando POST */
 router.post('/update/_id', function (req, res, next) {
-  console.log(req.body._id);
-  UsersModel.findByIdAndUpdate(req.body._id, req.body, function (err, post) {
+  console.log(req.body._id,  req.body.name);
+  UsersModel.findByIdAndUpdate(req.body._id,function (err, post) {
     if (err) {
 
       res.render('dadosSala', { message: 'Usuário não alterado!' });

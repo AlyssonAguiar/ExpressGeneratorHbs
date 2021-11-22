@@ -21,8 +21,8 @@ router.get('/consultar/:name', function (req, res) {
 });
 
 /* DELETE por ID */
-router.get('/delete/:id', function (req, res) {
-  UsersModel.findByIdAndRemove(req.params.id, function (err, project) {
+router.get('/delete/:_id', function (req, res) {
+  UsersModel.findByIdAndRemove(req.params._id, function (err, project) {
     if (err) {
 
       res.render('dadosPessoa', { message: 'Usuário não deletado!' });
