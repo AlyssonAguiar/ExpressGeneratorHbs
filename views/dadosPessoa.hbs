@@ -1,0 +1,71 @@
+<div class="formulario">
+  <div class="tabcontent">
+    <h3>Consultar dados</h3>
+
+    <form>
+      <fieldset
+        class="group"
+        style="display: flex; flex-direction: column; flex-wrap: nowrap;"
+      >
+
+        <div class="field">
+          <label for="consultaPessoa" class="form-label">Consultar pessoa por
+            <b>Nome</b></label>
+          <input
+            type="text"
+            class="form-control"
+            name="consultaPessoa"
+            id="consultaPessoa"
+          />
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button
+              class="btn btn-secondary"
+              style="margin-top: 10px"
+              onclick="deletePersonId()"
+            >Consultar</button>
+          </div>
+        </div>
+
+        <div class="listagem">
+
+          <div class="listagem_valor">
+            <label for="consultaPessoa">Id:</label>
+            <p class="valor"><b>teste</b></p>
+          </div>
+
+          <div class="listagem_valor">
+            <label for="consultaPessoa">Nome:</label>
+            <p class="valor"><b>nome.teste</b></p>
+          </div>
+
+          <div class="listagem_valor">
+            <label for="consultaPessoa">Sobrenome:</label>
+            <p class="valor"><b>sobrenome.teste</b></p>
+          </div>
+
+        </div>
+
+        <div class="field">
+          <label for="deletePerson" class="form-label">Excluir pessoa pelo
+            <b>ID</b></label>
+          <input
+            type="text"
+            class="form-control"
+            name="deletePerson"
+            id="deletePerson"
+          />
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button
+              class="btn btn-secondary"
+              style="margin-top: 10px"
+              onclick="deletePersonId()"
+            >Deletar pessoa</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>

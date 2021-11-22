@@ -1,0 +1,79 @@
+<div class="formulario">
+  <div class="tabcontent">
+    <h3>Consultar dados</h3>
+
+    <form>
+      <fieldset
+        class="group"
+        style="display: flex; flex-direction: column; flex-wrap: nowrap;"
+      >
+
+        <div class="field">
+          <label for="consultRoom" class="form-label"><strong>Consultar sala
+              pelo ID</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="consultRoom"
+            id="consultRoom"
+          />
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button
+              class="btn btn-secondary"
+              style="margin-top: 10px"
+              onclick="deletePersonId()"
+            >Consultar</button>
+          </div>
+        </div>
+
+        <div class="listagem">
+
+          <div class="listagem_valor">
+            <label for="consultaPessoa">Id:</label>
+            <p  class="valor"><b>teste</b></p>
+          </div>
+
+          <div class="listagem_valor">
+            <label for="consultaPessoa">Nome:</label>
+            <p  class="valor"><b>nome.teste</b></p>
+          </div>
+
+          <div class="listagem_valor">
+            <label for="consultaPessoa">Sobrenome:</label>
+            <p class="valor"><b>sobrenome.teste</b></p>
+          </div>
+
+        </div>
+
+<div>
+  <h3 style="padding-top: 10px">Alterar Dados</h3>
+</div>
+        <div>
+          <label for="consultRoom" class="form-label">Nome da Sala</label>
+          <input
+            type="text"
+            class="form-control"
+            name="consultRoom"
+            id="nomeSala"
+          />
+
+          <label for="consultRoom" class="form-label">Id da Sala</label>
+          <input
+            type="text"
+            class="form-control"
+            name="consultRoom"
+            id="numeroSala"
+          />
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button
+              class="btn btn-secondary"
+              style="margin-top: 10px"
+              onclick="deletePersonId()"
+            >Alterar</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
