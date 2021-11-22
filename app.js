@@ -12,7 +12,7 @@ var cors = require('cors')
 //variavel de rotas
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var cadastroPessoasRouter = require('./routes/cadastroPessoa');
+var cadastroPessoaRouter = require('./routes/cadastroPessoa');
 var cadastroSalasRouter = require('./routes/cadastroSalas');
 var dadosPessoaRouter = require('./routes/dadosPessoa');
 var dadosSalaRouter = require('./routes/dadosSala');
@@ -61,7 +61,7 @@ mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
 
 app.use('/index', indexRouter);
 app.use('/', usersRouter);
-app.use('/cadastroPessoas', cadastroPessoasRouter);
+app.use('/cadastroPessoa', cadastroPessoaRouter);
 app.use('/cadastroSalas', cadastroSalasRouter);
 app.use('/dadosPessoa', dadosPessoaRouter);
 app.use('/dadosSala', dadosSalaRouter);
