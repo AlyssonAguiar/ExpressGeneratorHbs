@@ -80,6 +80,19 @@ router.get('/consultar/:name', function(req, res) {
     });
 });
 
+
+//Retorna pessoas cadastras porém em arquivo json não tratado
+router.get('/tabelaPessoa', function(req, res, next) {
+    UsersModel.find({},function(err, users  ){
+      if(err){
+        res.send('algo deu errado');
+        next();
+      }
+      res.json(users);
+    })
+  })
+  
+
 /* UPDATE User */
 router.post('/edit/:id', function(req, res) {
     UsersModel.findByIdAndUpdate(req.params.id, req.body, function(err) {

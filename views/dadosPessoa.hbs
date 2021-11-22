@@ -15,15 +15,14 @@
           <input
             type="text"
             class="form-control"
-            name="consultaPessoa"
-            id="consultaPessoa"
+            name="nome"
           />
 
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button
               class="btn btn-secondary"
               style="margin-top: 10px"
-              href='consultar/{{name}}'
+              href='consultar/{{nome}}'
             >Consultar</button>
           </div>
         </div>
@@ -32,7 +31,7 @@
 
           <div class="listagem_valor">
             <label for="consultaPessoa">Id:</label>
-            <p class="valor" value="{{userDetail.name}}"></p>
+            <p class="valor" value="{{userDetail.nome}}"></p>
           </div>
 
           <div class="listagem_valor">
@@ -53,7 +52,7 @@
           <input
             type="text"
             class="form-control"
-            name="deletePerson"
+            nome="deletePerson"
             id="deletePerson"
           />
 
