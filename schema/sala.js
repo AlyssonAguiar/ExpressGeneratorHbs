@@ -7,4 +7,5 @@ var mysala = new Schema({
 sala :String,
 lotacao :Number
 });
+
 module.exports = mongoose.model('salas', mysala);

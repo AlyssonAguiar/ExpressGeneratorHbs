@@ -55,11 +55,6 @@ mongoose.connect('mongodb+srv://leojportes:33693422@cluster0.cc09x.mongodb.net/f
 .then(() => console.log('connection successful'))
 .catch((err) => console.error(err))
 
-//mongoose.connect("mongodb://localhost:27017/test", { useNewUrlParser: true });
-//State  0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
-//console.log(mongoose.connection.readyState);
-//DB Connection End
-
 app.use('/index', indexRouter);
 app.use('/', usersRouter);
 app.use('/cadastroPessoa', cadastroPessoaRouter);
