@@ -1,24 +1,37 @@
-<div style="display: flex; justify-content: center; margin-top: 20px;">
-  <h1>Tabela de pessoas cadastras</h1>
-</div>
+{{#if message}}
+    {{message}}
+{{/if}}
+<table border="1">
 
-<div class="tabela">
-  <table class="table table-bordered" style="width: 100%">
-    <thead>
-      <tr>
-        <th scope="col" style="width: 33%;">id</th>
-        <th scope="col" style="width: 33%;">Nome</th>
-        <th scope="col" style="width: 33%;">Sobrenome</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{!-- {{#each users}}
         <tr>
-                <td>{{user_name}}</td>
-                <td>{{user_email}}</td>
-                <td>{{user_mobile}}</td>
+
+                <th>Name</th>
+                <th>Sobrenome</th>
+                
+
         </tr>
-         --}}
-    </tbody>
-  </table>
-</div>
+ 
+       Record Found {{ users.length  }}
+        {{#each users}}
+        <tr>
+
+                <td>{{name}}</td>
+                <td>{{sobrenome}}</td>
+                
+                <td>
+                        <a href='edit/{{_id}}'>Edit</a> |    
+                 
+                        <a href='delete/{{_id}}'>Delete</a>
+                </td>
+
+        </tr>
+
+        {{else}}
+
+        
+                 No Record Found
+        
+        {{/each}}
+</table>
+
+ 

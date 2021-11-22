@@ -2,7 +2,7 @@
   <div class="tabcontent">
     <h3>Consultar dados</h3>
 
-    <form>
+    <form method="get">
       <fieldset
         class="group"
         style="display: flex; flex-direction: column; flex-wrap: nowrap;"
@@ -22,7 +22,7 @@
             <button
               class="btn btn-secondary"
               style="margin-top: 10px"
-              onclick="deletePersonId()"
+              href='consultar/{{name}}'
             >Consultar</button>
           </div>
         </div>
@@ -31,7 +31,7 @@
 
           <div class="listagem_valor">
             <label for="consultaPessoa">Id:</label>
-            <p class="valor"><b>teste</b></p>
+            <p class="valor" value="{{userDetail.name}}"></p>
           </div>
 
           <div class="listagem_valor">

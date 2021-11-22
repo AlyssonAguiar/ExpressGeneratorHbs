@@ -2,20 +2,20 @@
   <div class="tabcontent">
     <h3>Cadastro de Salas</h3>
 
-  <form>
+  <form method="POST">
     <div class="mb-3">
     <label for="nomesala" class="form-label"><strong>Nome da Sala</strong></label>
-    <input type="text"  class="form-control" name="nomesala" id="nomesala" required>
+    <input type="text"  class="form-control" name="sala" required>
   </div>
 
   <div class="mb-3">
     <label for="lotacao" class="form-label"><strong>Lotação</strong></label>
-    <input type="number" class="form-control" name="lotacao" id="lotacao" required>
+    <input type="number" class="form-control" name="lotacao" required>
   </div>
   
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary" onclick="Salvar()">Salvar
-            </div>
+                <button class="btn btn-primary" type="submit">Salvar
+  </div>
   </form>
   </div>
 </div>

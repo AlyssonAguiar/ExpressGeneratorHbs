@@ -1,21 +1,23 @@
 <div class="formulario">
   <div class="tabcontent">
     <h3>Cadastro de pessoas</h3>
-
-  <form>
+  
+  <form method="post">
     <div class="mb-3">
       <label for="nome" class="form-label" style=""><strong>Nome</strong></label>
-      <input type="text" class="form-control" id="nome" required>
+      <input type="text" class="form-control" name="name" required>
     </div>
 
     <div class="mb-3">
       <label for="sobrenome" class="form-label"><strong>Sobrenome</strong></label>
-      <input type="text" class="form-control" id="sobrenome" required>
+      <input type="text" class="form-control" name="sobrenome" required>
     </div>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary" onclick="Salvar()">Salvar
-            </div>
+                <button class="btn btn-primary" type="submit">Salvar
+    </div>
+   
   </form>
+   {{#if message}} {{message}} {{/if}}
   </div>
 </div>

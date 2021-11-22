@@ -4,17 +4,12 @@ var router = express.Router();
 var UsersModel = require('../schema/user');
 var Response = require('../response');
 
-
-
 //List Table Data
 router.get('/', function(req, res) {
      
             res.render('index');
          
 });
-
-
-
 
 //List Table Data
 router.get('/display', function(req, res) {
@@ -36,23 +31,22 @@ router.get('/add', function(req, res, next) {
 
 
 /* POST Data. */
-router.post('/add', function(req, res, next) {
+router.post('/cadastroPessoa', function(req, res, next) {
     console.log(req.body);
 
     const mybodydata = {
-        user_name: req.body.user_name,
-        user_email: req.body.user_email,
-        user_mobile: req.body.user_mobile
+        name: req.body.nome,
+        sobrenome: req.body.sobrenome
     }
     var data = UsersModel(mybodydata);
     //var data = UsersModel(req.body);
     data.save(function(err) {
         if (err) {
 
-            res.render('add-form', { message: 'User registered not successfully!' });
+            res.render('cadastroPessoa', { message: 'User registered not successfully!' });
         } else {
 
-            res.render('add-form', { message: 'User registered successfully!' });
+            res.render('cadastroPessoa', { message: 'User registered successfully!' });
         }
     })
 });
@@ -74,15 +68,14 @@ router.get('/delete/:id', function(req, res) {
 
 
 /* GET SINGLE User BY ID */
-router.get('/edit/:id', function(req, res) {
-    console.log(req.params.id);
-    UsersModel.findById(req.params.id, function(err, user) {
+router.get('/consultar/:name', function(req, res) {
+    console.log(req.params.name);
+    UsersModel.findOne(req.params.name, function(err, users) {
         if (err) {
             console.log(err);
         } else {
-            console.log(user);
-
-            res.render('edit-form', { userDetail: user });
+            console.log(users);
+            res.render('dadosPessoa', {userDetail: users });
         }
     });
 });
@@ -101,16 +94,17 @@ router.post('/edit/:id', function(req, res) {
 });
 
 
-router.get('/get-all-users-api', function(req, res, next) {
-    UsersModel.find({}, function(err, posts) {
-        if (err) {
-            Response.errorResponse(err, res);
-        } else {
-            Response.successResponse('User Listing!', res, posts);
-        }
-    });
+// router.get('/tabelaPessoa', function(req, res, next) {
+//     UsersModel.find({}, function(err, posts) {
+//         if (err) {
+            
+        
+//         } else {
 
-});
+//         }
+//     });
+
+// });
 
 router.post('/add-users-api', function(req, res, next) {
     console.log(req.body);
@@ -167,13 +161,6 @@ router.post('/update-users-api', function(req, res, next) {
   }
 });
 });
-
-
-
-
-
-
-
 
 
 module.exports = router;
